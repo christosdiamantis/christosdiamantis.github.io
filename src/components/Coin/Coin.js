@@ -15,7 +15,7 @@ export default function Coin(props) {
         {props.rank ? props.rank : "N/A"}
       </S.Sticky>
       <S.StickyName nameLength={props.name.length}>
-        <Link to={`/${props.name}`}>
+        <Link to={`/${props.id}`}>
           <S.CoinName>
             <img src={props?.image} alt={props?.name} />{" "}
             <div>

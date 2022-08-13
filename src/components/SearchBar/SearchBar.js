@@ -37,7 +37,7 @@ export default function SearchBar() {
           {searchData.map((coin) => {
             return (
               <Link
-                to={`/${coin.name}`}
+                to={`/${coin.id}`}
                 onClick={() => setSearch("")}
                 key={coin.id}
                 onMouseDown={(e) => e.preventDefault()}

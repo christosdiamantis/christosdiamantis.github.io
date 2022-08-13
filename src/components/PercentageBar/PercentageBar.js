@@ -9,15 +9,19 @@ export default function PercentageBar({ first, second, type, currency }) {
 
   return (
     <S.PercentageBar>
-      {type === "coin" && (
+      {(type === "coin" || type === "details") && (
         <S.Header>
           <S.HeaderLeft>
-            •{currency && getSymbol(currency)}
-            {millify(Number(first))}
+            • {currency && getSymbol(currency)}
+            {type === "coin"
+              ? millify(Number(first))
+              : `${(basePercentage * 100).toFixed(2)}%`}
           </S.HeaderLeft>
           <S.HeaderRight>
-            •{currency && getSymbol(currency)}
-            {millify(Number(second))}
+            • {currency && getSymbol(currency)}
+            {type === "coin"
+              ? millify(Number(second))
+              : `${(100 - basePercentage * 100).toFixed(2)}%`}
           </S.HeaderRight>
         </S.Header>
       )}

@@ -111,6 +111,7 @@ export default function CoinList() {
                 return (
                   <Coin
                     key={coin.id}
+                    id={coin.id}
                     rank={coin.market_cap_rank}
                     image={coin.image}
                     name={coin.name}

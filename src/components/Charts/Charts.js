@@ -9,8 +9,9 @@ export default function Charts() {
   const { data, isFetching, isError, error } = useGetMarketsQuery({
     coin: "bitcoin",
     currency: currency,
+    days: 30,
   });
-  
+
   return (
     <>
       {isFetching && (

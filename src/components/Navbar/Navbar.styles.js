@@ -2,11 +2,26 @@ import styled from "styled-components";
 
 export const Navbar = styled.div`
   margin: 0 1em;
+  //margin: 0;
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  //padding: 1em 0;
   background: ${({ theme }) => theme.main};
   border-radius: 0 0 5px 5px;
+  //width: 100vw;
+  //left: calc(-50vw + 50%);
+  //position: relative;
+
+  //margin: 0 -9999rem;
+  /* add back negative margin value */
+  //padding: 1em 9999rem;
+  //position: sticky;
+
+  button,
+  select {
+    cursor: pointer;
+  }
 
   @media (max-width: 650px) {
     margin: 0;
@@ -39,17 +54,25 @@ export const Coins = styled.div`
   font-size: 15px;
   margin: 0;
   padding: 0.4em 1em;
-  border-radius: 5px;
+  border-radius: 10px;
   background: ${({ theme, pathname }) =>
     pathname === "/" ? theme.background : theme.main};
+
+  &:hover {
+    background: ${({ theme }) => theme.background};
+  }
 `;
 
 export const Portfolio = styled.div`
   font-size: 15px;
   padding: 0.4em 1em;
-  border-radius: 5px;
+  border-radius: 10px;
   background: ${({ theme, pathname }) =>
     pathname === "/portfolio" ? theme.background : theme.main};
+
+  &:hover {
+    background: ${({ theme }) => theme.background};
+  }
 `;
 
 export const RightSide = styled.div`
@@ -58,7 +81,7 @@ export const RightSide = styled.div`
     color: ${({ theme }) => theme.color};
     background: ${({ theme }) => theme.background};
     border-width: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-left: 1em;
     padding: 0 0.7em;
 
@@ -68,6 +91,7 @@ export const RightSide = styled.div`
   }
 `;
 
-export const Sun = styled.div`
-  color: ${({ theme }) => theme.color};
+export const Icon = styled.div`
+  //color: ${({ theme }) => theme.color};
+  padding-bottom: 0.1em;
 `;

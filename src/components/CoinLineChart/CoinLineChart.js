@@ -6,10 +6,8 @@ import getChartOptions from "utils/getChartOptions";
 //eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
-import getSymbol from "utils/getSymbol";
-import * as S from "./LineChart.styles";
 
-export default function LineChart(props) {
+export default function CoinLineChart(props) {
   const chartRef = createRef();
   const [chartData, setChartData] = useState({ datasets: [] });
   const [reference, setReference] = useState(null);
@@ -40,7 +38,7 @@ export default function LineChart(props) {
 
   const data = (chart) => {
     return {
-      labels: props.data.map((element) => getDay(element[0])),
+      labels: props.data.map((element) => getDate(element[0])),
       datasets: [
         {
           label: "Price",
@@ -57,19 +55,23 @@ export default function LineChart(props) {
     };
   };
 
+  var options = getChartOptions();
+
   return (
-    <div className="chart">
-      <S.Text>
-        <div>BTC Price</div>
-        <S.Value>
-          {getSymbol(props.currency)}
-          {Number(
-            props.data[props.data.length - 1][1].toFixed(0)
-          ).toLocaleString("en-UK")}
-        </S.Value>
-        <S.DateText>{getDate(props.data[props.data.length - 1][0])}</S.DateText>
-      </S.Text>
-      <Line ref={chartRef} data={chartData} options={getChartOptions()} />
+    <div className="chart" style={{ height: 350 }}>
+      <Line
+        ref={chartRef}
+        data={chartData}
+        options={{
+          ...options,
+          layout: { padding: { top: 0 } },
+          maintainAspectRatio: false,
+          scales: {
+            ...options.scales,
+            xAxes: { ...options.scales.xAxes, display: false },
+          },
+        }}
+      />
     </div>
   );
 }

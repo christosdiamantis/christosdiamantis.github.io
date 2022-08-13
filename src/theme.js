@@ -2,8 +2,10 @@
 const common = {
     positive: "#00FC2A",
     negative: "#FE1040",
+    //converter: '#1AD761',
     coin: 11,
-    global: 3
+    global: 3,
+    details: 11,
 }
 
 export const light = {
@@ -18,6 +20,9 @@ export const light = {
     fontFamily: 'sans-serif',
     sideScroll: '#FFFAFA',//'#F9F9F3',//
     pageNumber: '#2172E5',
+    converter: '#2172E5',
+    shadow: '#3B8CFF',
+    bullet: '#2550EA',
     ...common,
 }
 
@@ -33,17 +38,29 @@ export const dark = {
     pageNumber: '#2172E5',
     fontFamily: 'sans-serif',
     sideScroll: '#202020',
+    converter: '#1AD761',
+    shadow: '#34F17B',
+    bullet: '#2172E5',
     ...common,
 }
 
 export const midnight = {
     main: '#08161f',//'#030420',
-    background: '#40417c',//#1c275c
-    color: '#fafafa',
+    background: '#40417c',//"#1c275c",//"#134f6c",//
+    color: '#F2F3F4',//'#fafafa',//
     line: '#40417c',
     bar: '#511C51',
-    percentageBase: '#511C51',
+    percentageBase: "#134f6c",//'#511C51',
     percentageFill: '#40417c',
-    ...common
+    border: '#707070',
+    pageNumber: '#40417c',
+    fontFamily: 'sans-serif',
+    sideScroll: '#202020',
+    converter: '#511C51',
+    shadow: '#6B366B',
+    bullet: '#40417c',
+    ...common,
+    positive: "#006E33",//"#056137",//"#255135",//"#103B20",//
+    negative: "#960400",
 }
 

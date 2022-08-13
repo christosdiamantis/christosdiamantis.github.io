@@ -25,7 +25,7 @@ export const GlobalStats = styled.table`
   }
 
   @media (max-width: 750px) {
-    margin-top: 1em;
+    margin-top: 0.5em;
     border-radius: 5px;
   }
 
@@ -36,12 +36,12 @@ export const GlobalStats = styled.table`
 
   @media (max-width: 450px) {
     overflow-x: scroll;
-    margin-top: 1em;
   }
 `;
 
 export const GlobalStatsItem = styled.div`
   display: flex;
+
   > * {
     margin: auto;
   }

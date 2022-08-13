@@ -42,7 +42,7 @@ export default function Navbar() {
             <option value="ETH">ETH</option>
           </select>
           <button onClick={() => dispatch(setTheme())}>
-            {theme === "dark" ? "☀" : "☽"}
+            <S.Icon>{theme === "dark" ? "☀" : "☽"}</S.Icon>
           </button>
         </S.RightSide>
       </S.Navbar>

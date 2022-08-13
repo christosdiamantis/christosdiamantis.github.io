@@ -12,7 +12,7 @@ export const SearchBar = styled.div`
   input {
     color: ${({ theme }) => theme.color};
     border-width: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     background: ${({ theme }) => theme.background};
     padding: 0.5em 1em;
     margin: 0;
@@ -36,7 +36,7 @@ export const SearchResults = styled.div`
   width: 100%;
   text-align: left;
   padding-bottom: 0.5em;
-  border-top: 1px solid ${({ theme }) => theme.color};
+  border-top: 1px solid ${({ theme }) => theme.border};
   border-radius: 0px 0px 5px 5px;
 
   img {

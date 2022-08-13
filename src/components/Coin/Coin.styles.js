@@ -1,4 +1,3 @@
-import theme from "services/theme";
 import styled from "styled-components";
 
 export const Coin = styled.tr`
