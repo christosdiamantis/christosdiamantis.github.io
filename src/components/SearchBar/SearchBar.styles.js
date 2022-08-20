@@ -14,7 +14,7 @@ export const SearchBar = styled.div`
     border-width: 0;
     border-radius: 10px;
     background: ${({ theme }) => theme.background};
-    padding: 0.5em 1em;
+    padding: ${({ type }) => type==="navbar" ? "0.5em 1em" : "0" } ;
     margin: 0;
   }
 
@@ -63,3 +63,7 @@ export const NoMatches = styled(SearchResults)`
   padding-top: 0.5em;
   text-align: center;
 `;
+
+export const SearchDiv = styled.div`
+  cursor: pointer;
+  `;

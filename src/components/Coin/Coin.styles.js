@@ -45,9 +45,10 @@ export const Sticky = styled.td`
   position: sticky;
   left: 8px;
   z-index: 10;
-  box-shadow: 0 0 0 1px ${({ theme }) => theme.border};
+  //box-shadow: 0 0 0 0 ${({ theme }) => theme.border};
   //border: 1px solid ${({ theme }) => theme.border};
   @media (max-width: 1050px) {
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.border};
     background-color: ${({ theme }) => theme.sideScroll};
     white-space: ${({ nameLength }) => (nameLength > 20 ? "normal" : "nowrap")};//
     background-clip: border-box;

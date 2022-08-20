@@ -22,6 +22,14 @@ export const cryptoApi = createApi({
       query: (coin) =>
         `coins/${coin}?localization=false&tickers=false&market_data=true&community_data=true&developer_data=false&sparkline=false`,
     }),
+    getHistory: builder.query({
+      query: ({ coin, date }) =>
+        !!coin && !!date && `coins/${coin}/history?date=${date}&localization=false`
+    }),
+    getPrice: builder.query({
+      query: ({ coins, currency }) =>
+        `simple/price?ids=${coins}&vs_currencies=${currency}&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true`
+    }),
   }),
 });
 
@@ -30,4 +38,6 @@ export const {
   useGetCoinsQuery,
   useGetMarketsQuery,
   useGetCoinQuery,
+  useGetHistoryQuery,
+  useGetPriceQuery,
 } = cryptoApi;

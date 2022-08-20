@@ -19,4 +19,5 @@ export const GlobalStyle = createGlobalStyle`
     
     .App {
         text-align: center;
-    }`;
+    }
+    `;

@@ -4,7 +4,7 @@ export const GlobalStats = styled.table`
   background: ${({ theme }) => theme.main};
   font-size: 0.9em;
   padding: 0.5em 1em;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 10px 10px;
   display: flex;
   width: fit-content;
   margin-left: auto;
@@ -26,7 +26,7 @@ export const GlobalStats = styled.table`
 
   @media (max-width: 750px) {
     margin-top: 0.5em;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   @media (max-width: 650px) {

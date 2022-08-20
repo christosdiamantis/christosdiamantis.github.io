@@ -8,7 +8,7 @@ export const Navbar = styled.div`
   padding: 1em;
   //padding: 1em 0;
   background: ${({ theme }) => theme.main};
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 10px 10px;
   //width: 100vw;
   //left: calc(-50vw + 50%);
   //position: relative;
@@ -28,6 +28,8 @@ export const Navbar = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0.5em;
+    padding-top: 1em;
   }
 
   select:focus {
@@ -86,7 +88,7 @@ export const RightSide = styled.div`
     padding: 0 0.7em;
 
     @media (max-width: 650px) {
-      margin: 1em 1em 1em 0;
+      margin: 1em 1em 0.5em 0;
     }
   }
 `;

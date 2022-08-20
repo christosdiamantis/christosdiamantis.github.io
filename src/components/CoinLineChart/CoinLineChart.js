@@ -1,6 +1,5 @@
 import React, { createRef, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
-import getDay from "utils/getDay";
 import getDate from "utils/getDate";
 import getChartOptions from "utils/getChartOptions";
 //eslint-disable-next-line

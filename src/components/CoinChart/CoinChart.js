@@ -5,7 +5,7 @@ import { useGetMarketsQuery } from "services/cryptoAPI";
 import { Loader, CoinLineChart } from "components";
 
 export default function CoinChart({ coin }) {
-  const [days, setDays] = useState("7");
+  const [days, setDays] = useState("30");
   const currency = useSelector((state) => state.currency.currency);
   const { data, isFetching, isError, error } = useGetMarketsQuery({
     coin: coin,

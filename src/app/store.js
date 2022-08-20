@@ -16,12 +16,13 @@ import { searchAPI } from 'services/searchAPI';
 import currencyReducer from 'services/currency';
 import themeReducer from 'services/theme';
 import rootReducer from 'services/index'
+import portfolioReducer from 'services/portfolio';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage: storage,
-  whitelist: ['currency', 'theme'],
+  whitelist: ['currency', 'theme', 'portfolio'],
   blacklist: [cryptoApi.reducerPath],
 };
 //const combinedReducers = combineReducers({currency: currencyReducer, theme: themeReducer});

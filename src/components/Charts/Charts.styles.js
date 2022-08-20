@@ -7,7 +7,7 @@ export const Charts = styled.div`
   > * {
     width: 50%;
     background: ${({ theme }) => theme.main};
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 1em;
     margin: 1em;
     overflow: hidden;

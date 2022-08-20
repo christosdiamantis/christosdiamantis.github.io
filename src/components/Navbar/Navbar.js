@@ -28,7 +28,7 @@ export default function Navbar() {
           </Link>
         </div>
         <S.RightSide>
-          <SearchBar />
+          <SearchBar type = "navbar" />
           <select
             value={currency.toUpperCase()}
             onChange={(e) =>

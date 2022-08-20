@@ -8,13 +8,18 @@ import * as S from "./GlobalStats.styles";
 
 export default function GlobalStats() {
   const currency = useSelector((state) => state.currency.currency);
-  const { data, isFetching } = useGetGlobalStatsQuery();
+  const { data, isFetching, isError, error } = useGetGlobalStatsQuery();
 
   return (
     <div>
       {isFetching && (
         <div>
           <Loader />
+        </div>
+      )}
+      {isError && (
+        <div>
+          Error {error.status}: {error.data.error}
         </div>
       )}
       {!isFetching && !!data && (

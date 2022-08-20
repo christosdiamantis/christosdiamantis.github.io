@@ -19,3 +19,4 @@ export {default as CoinChart} from './CoinChart';
 export {default as CurrencyConverter} from './CurrencyConverter';
 export {default as CoinLineChart} from './CoinLineChart';
 export {default as Link} from './Link';
+export {default as PortfolioCoin} from './PortfolioCoin';

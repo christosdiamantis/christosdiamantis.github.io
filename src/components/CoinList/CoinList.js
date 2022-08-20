@@ -10,7 +10,7 @@ export default function CoinList() {
   const [perPage, setPerPage] = useState(10);
   const [pageNumber, setPageNumber] = useState(1);
   const [sortingState, setSortingState] = useState();
-  const { data, isFetching } = useGetCoinsQuery({
+  const { data, isFetching, isError, error } = useGetCoinsQuery({
     currency: currency,
     perPage: perPage,
     page: pageNumber,
@@ -91,6 +91,11 @@ export default function CoinList() {
           <Loader />
         </div>
       )}
+      {isError && (
+        <div>
+          Error {error.status}: {error.data.error}
+        </div>
+      )}
       {!isFetching && !!coins && (
         <S.CoinList>
           <ParamsBar
@@ -107,10 +112,10 @@ export default function CoinList() {
               sortingState={sortingState}
             />
             <tbody>
-              {coins.map((coin) => {
+              {coins.map((coin, index) => {
                 return (
                   <Coin
-                    key={coin.id}
+                    key={index}
                     id={coin.id}
                     rank={coin.market_cap_rank}
                     image={coin.image}

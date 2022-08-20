@@ -4,7 +4,7 @@ export const CoinList = styled.div`
   background-color: ${({ theme }) => theme.main};
   margin: 1em;
   padding: 1em;
-  border-radius: 5px;
+  border-radius: 10px;
 
   @media (max-width: 1050px) {
     overflow-x: auto;
