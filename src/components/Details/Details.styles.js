@@ -116,6 +116,7 @@ export const Description = styled.div`
 export const Links = styled.div`
   width: 85%;
   display: flex;
+  justify-content: center;
 
   @media (max-width: 950px) {
     width: 100vw;
@@ -133,8 +134,24 @@ export const Links = styled.div`
     padding: 1em;
     text-align: center;
 
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
     @media (max-width: 750px) {
       width: auto;
+
+      &:first-of-type {
+        margin-left: 1em;
+      }
+
+      &:last-of-type {
+        margin-right: 1em;
+      }
     }
   }
 `;

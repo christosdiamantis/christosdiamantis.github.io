@@ -26,10 +26,8 @@ export const Bar = styled.div`
 
 export const LeftSide = styled.div`
   display: flex;
-  
-  > * {
-    margin-top: auto;
-  }
+  white-space: nowrap;
+  align-items: baseline;
 
   @media (max-width: 750px) {
     padding: 1em;

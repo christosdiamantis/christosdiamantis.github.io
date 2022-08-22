@@ -15,10 +15,6 @@ export const Coin = styled.tr`
     width: 1.1em;
     height: 1.1em;
   }
-
-  > * {
-    //margin: auto;
-  }
 `;
 
 export const Percentage = styled.td`
@@ -40,17 +36,16 @@ export const Abbreviation = styled.span`
 `;
 
 export const Sticky = styled.td`
-  
   position: -webkit-sticky;
   position: sticky;
   left: 8px;
   z-index: 10;
-  //box-shadow: 0 0 0 0 ${({ theme }) => theme.border};
-  //border: 1px solid ${({ theme }) => theme.border};
+
   @media (max-width: 1050px) {
     box-shadow: 0 0 0 1px ${({ theme }) => theme.border};
     background-color: ${({ theme }) => theme.sideScroll};
-    white-space: ${({ nameLength }) => (nameLength > 20 ? "normal" : "nowrap")};//
+    white-space: ${({ nameLength }) =>
+      nameLength > 20 ? "normal" : "nowrap"}; //
     background-clip: border-box;
     border-top: 1px solid ${({ theme }) => theme.border};
   }
@@ -64,7 +59,6 @@ export const StickyName = styled(Sticky)`
 `;
 
 export const Patch = styled.div`
-
   display: none;
   position: absolute;
   top: 0;

@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Placeholder = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+`;
+
 export const Charts = styled.div`
   display: flex;
   width: 100%;

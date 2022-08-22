@@ -7,8 +7,13 @@ export const themeSlice = createSlice({
     setTheme: (state, action) => {
       if (state.value === "dark") {
         return { value: "light" };
+      } else if (state.value === "light") {
+        return { value: "forest" };
+      } else if (state.value === "forest") {
+        return { value: "midnight" };
+      } else {
+        return { value: "dark" };
       }
-      return { value: "dark" };
     },
   },
 });

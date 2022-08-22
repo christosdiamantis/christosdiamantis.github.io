@@ -8,7 +8,7 @@ export default function PercentageBar({ first, second, type, currency }) {
   const basePercentage = percentage(first, second);
 
   return (
-    <S.PercentageBar>
+    <S.PercentageBar type={type}>
       {(type === "coin" || type === "details") && (
         <S.Header>
           <S.HeaderLeft>

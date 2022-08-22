@@ -24,6 +24,17 @@ export const PopUp = styled.div`
   left: 50%;
   display: ${({ popped }) => (popped ? "flex" : "none")};
   transform: translate(-50%, -50%);
+
+  ::before {
+    content: "";
+    width: 100vw;
+    z-index: -1;
+    left: calc(-50vw + 50%);
+    position: absolute;
+    height: 100vh;
+    top: calc(-50vh + 50%);
+    backdrop-filter: blur(5px);
+  }
 `;
 
 export const PopUpForm = styled.div`
@@ -79,6 +90,14 @@ export const CoinInfoPlaceholder = styled.div`
   border-radius: 10px;
   background: ${({ theme }) => theme.background};
   min-height: 8em;
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+    margin-right: auto;
+  }
 `;
 
 export const Input = styled.input`

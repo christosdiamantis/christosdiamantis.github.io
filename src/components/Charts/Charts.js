@@ -14,9 +14,12 @@ export default function Charts() {
 
   return (
     <>
+      <h2 style={{ marginTop: "1.5em" }}>Bitcoin Charts</h2>
       {isFetching && (
         <div>
-          <Loader />
+          <S.Placeholder>
+            <Loader />
+          </S.Placeholder>
         </div>
       )}
       {isError && (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Charts, CoinList } from "components";
+import { Charts, CoinList, Footer } from "components";
 import * as S from "./Coins.styles";
 
 export default function Coins() {
@@ -7,6 +7,7 @@ export default function Coins() {
     <S.CoinPage>
       <Charts />
       <CoinList />
+      <Footer />
     </S.CoinPage>
   );
 }

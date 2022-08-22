@@ -86,9 +86,12 @@ export default function CoinList() {
 
   return (
     <div>
+      <h2 style={{ marginBottom: "1.5em" }}>Overview</h2>
       {isFetching && (
         <div>
-          <Loader />
+          <S.Placeholder>
+            <Loader />
+          </S.Placeholder>
         </div>
       )}
       {isError && (

@@ -151,7 +151,13 @@ export default function Portfolio() {
                 </div>{" "}
               </>
             ) : (
-              <S.CoinInfoPlaceholder>Choose </S.CoinInfoPlaceholder>
+              <S.CoinInfoPlaceholder>
+                <span>1. Search Coin</span>
+                <br></br>
+                <span>2. Insert amount</span>
+                <br></br>
+                <span>3. Choose Date</span>
+              </S.CoinInfoPlaceholder>
             )}
           </S.CoinInfo>
           <S.Main>

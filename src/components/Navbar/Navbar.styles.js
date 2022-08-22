@@ -1,22 +1,50 @@
 import styled from "styled-components";
 
+export const NavbarContainer = styled.div`
+  background: ${({ theme }) => theme.main};
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Navbar = styled.div`
   margin: 0 1em;
-  //margin: 0;
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  //padding: 1em 0;
   background: ${({ theme }) => theme.main};
   border-radius: 0 0 10px 10px;
-  //width: 100vw;
-  //left: calc(-50vw + 50%);
-  //position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(1200px - 2em);
 
-  //margin: 0 -9999rem;
-  /* add back negative margin value */
-  //padding: 1em 9999rem;
-  //position: sticky;
+  @media (max-width: 1250px) {
+    width: calc(1100px - 2em);
+  }
+
+  @media (max-width: 1150px) {
+    width: calc(1000px - 2em);
+  }
+
+  @media (max-width: 1050px) {
+    width: calc(900px - 2em);
+  }
+
+  @media (max-width: 950px) {
+    width: calc(100vw - 2em);
+  }
+
+  @media (max-width: 850px) {
+    width: calc(100vw - 2em);
+    margin: 0;
+  }
+
+  @media (max-width: 650px) {
+    width: calc(100vw - 2em);
+  }
 
   button,
   select {
@@ -53,6 +81,7 @@ export const Navbar = styled.div`
 `;
 
 export const Coins = styled.div`
+  display: flex;
   font-size: 15px;
   margin: 0;
   padding: 0.4em 1em;
@@ -63,9 +92,14 @@ export const Coins = styled.div`
   &:hover {
     background: ${({ theme }) => theme.background};
   }
+
+  svg {
+    margin-right: 0.2em;
+  }
 `;
 
 export const Portfolio = styled.div`
+  display: flex;
   font-size: 15px;
   padding: 0.4em 1em;
   border-radius: 10px;
@@ -75,10 +109,19 @@ export const Portfolio = styled.div`
   &:hover {
     background: ${({ theme }) => theme.background};
   }
+
+  > * {
+    margin: auto;
+  }
+
+  svg {
+    margin-right: 0.2em;
+  }
 `;
 
 export const RightSide = styled.div`
   display: flex;
+
   > * {
     color: ${({ theme }) => theme.color};
     background: ${({ theme }) => theme.background};
@@ -94,6 +137,13 @@ export const RightSide = styled.div`
 `;
 
 export const Icon = styled.div`
-  //color: ${({ theme }) => theme.color};
   padding-bottom: 0.1em;
+`;
+
+export const Mobile = styled.div`
+  display: none;
+  @media (max-width: 650px) {
+    display: inline;
+    height: 16px;
+  }
 `;

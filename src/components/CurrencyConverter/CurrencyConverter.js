@@ -41,7 +41,9 @@ export default function CurrencyConverter({ currency, coin, price }) {
     <S.Converter>
       <S.Currency>
         <div>
-          <span>{inverted ? currency.toUpperCase() : coin.toUpperCase()}</span>
+          <span>
+            {inverted ? currency.toUpperCase() : coin.toUpperCase().slice(0, 3)}
+          </span>
         </div>
         <input
           type="number"
@@ -73,7 +75,9 @@ export default function CurrencyConverter({ currency, coin, price }) {
           value={toAmount}
           onChange={(e) => handleToAmount(e)}
         ></input>
-        <div>{inverted ? coin.toUpperCase() : currency.toUpperCase()}</div>
+        <div>
+          {inverted ? coin.toUpperCase().slice(0, 3) : currency.toUpperCase()}
+        </div>
       </S.Coin>
     </S.Converter>
   );

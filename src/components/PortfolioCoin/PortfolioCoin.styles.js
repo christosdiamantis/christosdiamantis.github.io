@@ -17,8 +17,6 @@ export const Main = styled.div`
   }
 
   span {
-    margin-top: 0;
-    margin-bottom: 0;
     margin: 0 auto 0 0;
   }
 
@@ -27,6 +25,9 @@ export const Main = styled.div`
     align-items: center;
     width: 280px;
     font-size: larger;
+    span {
+      margin: 0;
+    }
   }
 `;
 
