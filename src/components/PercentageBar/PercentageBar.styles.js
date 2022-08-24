@@ -7,6 +7,11 @@ export const PercentageBar = styled.div`
   position: relative;
   z-index: 0;
   padding-bottom: ${({ type }) => (type === "coin" ? "1em" : "0em")};
+  width: ${({ theme, type }) => `${theme[type]}em`};
+
+  @media (max-width: 1050px) {
+    width: auto;
+  }
 `;
 
 export const Bar = styled.div`

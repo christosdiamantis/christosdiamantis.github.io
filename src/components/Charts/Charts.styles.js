@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Placeholder = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+`;
+
 export const Charts = styled.div`
   display: flex;
   width: 100%;
@@ -7,7 +15,7 @@ export const Charts = styled.div`
   > * {
     width: 50%;
     background: ${({ theme }) => theme.main};
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 1em;
     margin: 1em;
     overflow: hidden;

@@ -9,13 +9,17 @@ export default function Charts() {
   const { data, isFetching, isError, error } = useGetMarketsQuery({
     coin: "bitcoin",
     currency: currency,
+    days: 30,
   });
-  
+
   return (
     <>
+      <h2 style={{ marginTop: "1.5em" }}>Bitcoin Charts</h2>
       {isFetching && (
         <div>
-          <Loader />
+          <S.Placeholder>
+            <Loader />
+          </S.Placeholder>
         </div>
       )}
       {isError && (

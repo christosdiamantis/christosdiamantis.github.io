@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
+export const Placeholder = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+`;
+
 export const CoinList = styled.div`
   background-color: ${({ theme }) => theme.main};
   margin: 1em;
   padding: 1em;
-  border-radius: 5px;
+  border-radius: 10px;
 
   @media (max-width: 1050px) {
     overflow-x: auto;

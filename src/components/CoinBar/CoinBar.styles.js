@@ -40,6 +40,7 @@ export const Arrow = styled.span`
   transform: translateY(50%);
   font-size: 0.5em;
   color: ${({ theme }) => theme.color};
+  vertical-align: middle;
 `;
 
 export const Patch = styled.div`

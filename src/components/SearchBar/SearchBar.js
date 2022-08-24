@@ -4,16 +4,22 @@ import { Loader } from "components";
 import { useGetSearchQuery } from "services/searchAPI";
 import * as S from "./SearchBar.styles";
 
-export default function SearchBar() {
+export default function SearchBar({ type, pullData }) {
   const [search, setSearch] = useState("");
   const { data, isFetching, isError } = useGetSearchQuery(search);
-  const [focused, setFocused] = React.useState(false);
+  const [focused, setFocused] = useState(false);
   const searchData = !!data ? data : [];
+
+  function handleClick (coin) {
+    pullData(coin)
+    setSearch("")
+    //setFocused(false)
+  }
 
   return (
     <S.SearchContainer>
       <form>
-        <S.SearchBar>
+        <S.SearchBar type={type}>
           <input
             type="text"
             placeholder=" Search..."
@@ -34,10 +40,24 @@ export default function SearchBar() {
       )}
       {data && !!data.length && !isError && !isFetching && focused && !!search && (
         <S.SearchResults>
-          {searchData.map((coin) => {
+          {type === "form" && searchData.map((coin) => {
+            return (
+              <S.SearchDiv
+                onClick={() => handleClick(coin)}
+                key={coin.id}
+                onMouseDown={(e) => e.preventDefault()}
+              >
+                <img src={coin.thumb} alt={coin.id} />
+                <div>
+                  {coin.name}({coin.symbol})
+                </div>
+              </S.SearchDiv>
+            );
+          })}
+          {type === "navbar" && searchData.map((coin) => {
             return (
               <Link
-                to={`/${coin.name}`}
+                to={`/${coin.id}`}
                 onClick={() => setSearch("")}
                 key={coin.id}
                 onMouseDown={(e) => e.preventDefault()}
