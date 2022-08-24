@@ -13,7 +13,6 @@ export default function SearchBar({ type, pullData }) {
   function handleClick (coin) {
     pullData(coin)
     setSearch("")
-    //setFocused(false)
   }
 
   return (
