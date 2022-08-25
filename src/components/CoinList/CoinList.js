@@ -7,7 +7,7 @@ import * as S from "./CoinList.styles";
 
 export default function CoinList() {
   const currency = useSelector((state) => state.currency.currency);
-  const [perPage, setPerPage] = useState(10);
+  const [perPage, setPerPage] = useState(20);
   const [pageNumber, setPageNumber] = useState(1);
   const [sortingState, setSortingState] = useState();
   const { data, isFetching, isError, error } = useGetCoinsQuery({

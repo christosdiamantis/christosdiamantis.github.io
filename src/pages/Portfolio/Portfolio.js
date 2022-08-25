@@ -41,7 +41,7 @@ export default function Portfolio() {
   }, []);
 
   useEffect(() => {
-    if (skip === false && data) {
+    if (skip === false && data && !isFetching) {
       dispatch(
         addCoin({
           id: coinData.id,
