@@ -13,10 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { cryptoApi } from 'services/cryptoAPI';
 import { searchAPI } from 'services/searchAPI';
-import currencyReducer from 'services/currency';
-import themeReducer from 'services/theme';
 import rootReducer from 'services/index'
-import portfolioReducer from 'services/portfolio';
 
 const persistConfig = {
   key: 'root',
@@ -25,10 +22,7 @@ const persistConfig = {
   whitelist: ['currency', 'theme', 'portfolio'],
   blacklist: [cryptoApi.reducerPath],
 };
-//const combinedReducers = combineReducers({currency: currencyReducer, theme: themeReducer});
-//const persistedReducer = persistReducer(persistConfig, combinedReducers);
-const persistedCurrencyReducer = persistReducer(persistConfig, currencyReducer);
-const persistedThemeReducer = persistReducer(persistConfig, themeReducer);
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export default configureStore({

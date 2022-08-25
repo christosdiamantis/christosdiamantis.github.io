@@ -43,7 +43,6 @@ export const portfolioSlice = createSlice({
       }
     },
     removeCoin: (state, action) => {
-      console.log(action.payload);
       if (state[action.payload.id].transactions.length === 1) {
         delete state[action.payload.id];
       } else {
