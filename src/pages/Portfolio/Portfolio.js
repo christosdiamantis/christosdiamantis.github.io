@@ -42,18 +42,22 @@ export default function Portfolio() {
 
   useEffect(() => {
     if (skip === false && data && !isFetching) {
-      dispatch(
-        addCoin({
-          id: coinData.id,
-          thumb: coinData.large,
-          name: coinData.name,
-          symbol: coinData.symbol,
-          transactionID: Math.random().toString(36).substr(2, 10),
-          date: date.split("-").reverse().join("-"),
-          price: data.market_data.current_price,
-          amount: amount,
-        })
-      );
+      if (!!data.market_data?.current_price) {
+        dispatch(
+          addCoin({
+            id: coinData.id,
+            thumb: coinData.large,
+            name: coinData.name,
+            symbol: coinData.symbol,
+            transactionID: Math.random().toString(36).substr(2, 10),
+            date: date.split("-").reverse().join("-"),
+            price: data.market_data.current_price,
+            amount: amount,
+          })
+        );
+      } else {
+        alert("Unable to get coin price for the specific date. Make sure you selected the correct date or try again later.");
+      }
       setSkip(true);
       setCoinData();
       setAmount(1);
