@@ -40,7 +40,7 @@ export default function PortfolioCoin({
           <div>
             <S.Bold>Price change 24h:</S.Bold>
             <S.Sign sign={priceChange < 0 ? "negative" : "positive"}>
-              {priceChange.toFixed(2)}%
+              {priceChange ? priceChange.toFixed(2) : "N/A"}%
             </S.Sign>
           </div>
           <div>
