@@ -1,6 +1,8 @@
 const common = {
   positive: "#00FC2A",
   negative: "#FE1040",
+  portfolioPositive: "#00FC2A",
+  portfolioNegative: "#FE1040",
   coin: 11,
   global: 3,
   details: 11,
@@ -23,6 +25,7 @@ export const light = {
   bullet: "#2550EA",
   portfolio: "#2172E5",
   ...common,
+  portfolioPositive: "#006E33"
 };
 
 export const dark = {
@@ -63,6 +66,7 @@ export const midnight = {
   ...common,
   positive: "#006E33",
   negative: "#960400",
+  portfolioNegative: "#FF7456",
 };
 
 export const forest = {
@@ -82,4 +86,5 @@ export const forest = {
   bullet: "#252796f",
   portfolio: "#84a98c",
   ...common,
+  portfolioNegative: "#FF7456",
 };

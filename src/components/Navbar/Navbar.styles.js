@@ -84,6 +84,7 @@ export const Coins = styled.div`
   display: flex;
   font-size: 15px;
   margin: 0;
+  margin-right: 1em;
   padding: 0.4em 1em;
   border-radius: 10px;
   background: ${({ theme, pathname }) =>
@@ -129,6 +130,14 @@ export const RightSide = styled.div`
     border-radius: 10px;
     margin-left: 1em;
     padding: 0 0.7em;
+    display: flex;
+    align-items: center;
+
+    select {
+      color: ${({ theme }) => theme.color};
+      background: ${({ theme }) => theme.background};
+      border-width: 0;
+    }
 
     @media (max-width: 650px) {
       margin: 1em 1em 0.5em 0;

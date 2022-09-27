@@ -1,1 +1,1 @@
-export {default} from './PagesBar';
+export { default } from "./PagesBar";

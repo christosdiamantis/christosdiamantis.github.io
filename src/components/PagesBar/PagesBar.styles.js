@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const PagesBar = styled.div`
   display: flex;
   justify-content: space-between;
-  //width: 21em;
-  //border-bottom: ${({ theme }) => `1px solid ${theme.border}`};
+
   > * {
     background: none;
     color: inherit;

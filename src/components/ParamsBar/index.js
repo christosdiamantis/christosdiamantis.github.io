@@ -1,1 +1,1 @@
-export {default} from './ParamsBar.js';
+export { default } from "./ParamsBar.js";

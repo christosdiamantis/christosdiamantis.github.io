@@ -59,6 +59,7 @@ export default function Navbar() {
           </div>
           <S.RightSide>
             <SearchBar type="navbar" />
+            <div>
             <select
               value={currency.toUpperCase()}
               onChange={(e) =>
@@ -71,6 +72,7 @@ export default function Navbar() {
               <option value="BTC">BTC</option>
               <option value="ETH">ETH</option>
             </select>
+            </div>
             <button onClick={() => dispatch(setTheme())}>
               <S.Icon>
                 {theme === "dark"

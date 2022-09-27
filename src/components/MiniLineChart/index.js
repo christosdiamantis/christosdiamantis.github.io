@@ -1,1 +1,1 @@
-export {default} from './MiniLineChart'
+export { default } from "./MiniLineChart";

@@ -114,7 +114,7 @@ export const Description = styled.div`
 `;
 
 export const Links = styled.div`
-  width: 85%;
+  width: calc(85% + 1em);
   display: flex;
   justify-content: center;
 

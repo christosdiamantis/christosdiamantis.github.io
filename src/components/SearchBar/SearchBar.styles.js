@@ -5,6 +5,7 @@ export const SearchContainer = styled.div`
   background: ${({ theme }) => theme.main};
   padding: 0;
   z-index: 1;
+  display: block;
 `;
 
 export const SearchBar = styled.div`

@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import getDay from "utils/getDay";
 import getDate from "utils/getDate";
-import getChartOptions from "utils/getChartOptions";
+import { chartOptions } from "utils/getChartOptions";
 //eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
@@ -69,7 +69,7 @@ export default function LineChart(props) {
         </S.Value>
         <S.DateText>{getDate(props.data[props.data.length - 1][0])}</S.DateText>
       </S.Text>
-      <Line ref={chartRef} data={chartData} options={getChartOptions()} />
+      <Line ref={chartRef} data={chartData} options={chartOptions} />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CoinBar = styled.tr`
   th {
+    padding: 0.5em 0;
     text-align: left;
     padding-left: 1em;
     white-space: nowrap;
