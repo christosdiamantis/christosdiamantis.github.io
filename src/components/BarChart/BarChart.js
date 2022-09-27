@@ -22,7 +22,6 @@ export default function BarChart(props) {
       },
     ],
   };
-  const options = getChartOptions();
 
   return (
     <div>
@@ -36,7 +35,7 @@ export default function BarChart(props) {
         </S.Value>
         <S.DateText>{getDate(props.data[props.data.length - 1][0])}</S.DateText>
       </S.Text>
-      <Bar data={data} options={options} />
+      <Bar data={data} options={getChartOptions()} />
     </div>
   );
 }

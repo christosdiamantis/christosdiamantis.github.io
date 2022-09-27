@@ -86,73 +86,75 @@ export default function CoinList() {
 
   return (
     <div>
-      <h2 style={{ marginBottom: "1.5em" }}>Overview</h2>
-      {isFetching && (
-        <div>
-          <S.Placeholder>
-            <Loader />
-          </S.Placeholder>
-        </div>
-      )}
-      {isError && (
-        <div>
-          Error {error.status}: {error.data.error}
-        </div>
-      )}
-      {!isFetching && !!coins && (
-        <S.CoinList>
-          <ParamsBar
-            handlePerPage={handlePerPage}
-            perPage={perPage}
-            pageNumber={pageNumber}
-            increasePageNumber={increasePageNumber}
-            decreasePageNumber={decreasePageNumber}
-            setPageNumber={setPageNumber}
-          />
-          <table>
-            <CoinBar
-              handleSortingState={handleSortingState}
-              sortingState={sortingState}
+      <h2 style={{ marginTop:"0.3em", marginBottom: "1em" }}>Overview</h2>
+      <S.CoinList perPage={perPage}>
+        {isFetching && (
+          <div>
+            <S.Placeholder>
+              <Loader />
+            </S.Placeholder>
+          </div>
+        )}
+        {isError && (
+          <div>
+            Error {error.status}: {error.data.error}
+          </div>
+        )}
+        {!isFetching && !!coins && (
+          <>
+            <ParamsBar
+              handlePerPage={handlePerPage}
+              perPage={perPage}
+              pageNumber={pageNumber}
+              increasePageNumber={increasePageNumber}
+              decreasePageNumber={decreasePageNumber}
+              setPageNumber={setPageNumber}
             />
-            <tbody>
-              {coins.map((coin, index) => {
-                return (
-                  <Coin
-                    key={index}
-                    id={coin.id}
-                    rank={coin.market_cap_rank}
-                    image={coin.image}
-                    name={coin.name}
-                    symbol={coin.symbol}
-                    price={coin.current_price}
-                    volume={coin.total_volume}
-                    change1h={coin.price_change_percentage_1h_in_currency}
-                    change24h={coin.price_change_percentage_24h_in_currency}
-                    change7d={coin.price_change_percentage_7d_in_currency}
-                    totalVolume={coin.total_volume}
-                    marketCap={coin.market_cap}
-                    circulation={coin.circulating_supply}
-                    totalSupply={coin.total_supply}
-                    sparkline={coin.sparkline_in_7d}
-                    currency={currency}
-                  />
-                );
-              })}
-            </tbody>
-          </table>
-          {perPage > 10 && (
-            <S.BottomPagesBar>
-              <PagesBar
-                pageNumber={pageNumber}
-                increasePageNumber={increasePageNumber}
-                decreasePageNumber={decreasePageNumber}
-                setPageNumber={setPageNumber}
-                perPage={perPage}
+            <table>
+              <CoinBar
+                handleSortingState={handleSortingState}
+                sortingState={sortingState}
               />
-            </S.BottomPagesBar>
-          )}
-        </S.CoinList>
-      )}
+              <tbody>
+                {coins.map((coin, index) => {
+                  return (
+                    <Coin
+                      key={index}
+                      id={coin.id}
+                      rank={coin.market_cap_rank}
+                      image={coin.image}
+                      name={coin.name}
+                      symbol={coin.symbol}
+                      price={coin.current_price}
+                      volume={coin.total_volume}
+                      change1h={coin.price_change_percentage_1h_in_currency}
+                      change24h={coin.price_change_percentage_24h_in_currency}
+                      change7d={coin.price_change_percentage_7d_in_currency}
+                      totalVolume={coin.total_volume}
+                      marketCap={coin.market_cap}
+                      circulation={coin.circulating_supply}
+                      totalSupply={coin.total_supply}
+                      sparkline={coin.sparkline_in_7d}
+                      currency={currency}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+            {perPage > 10 && (
+              <S.BottomPagesBar>
+                <PagesBar
+                  pageNumber={pageNumber}
+                  increasePageNumber={increasePageNumber}
+                  decreasePageNumber={decreasePageNumber}
+                  setPageNumber={setPageNumber}
+                  perPage={perPage}
+                />
+              </S.BottomPagesBar>
+            )}
+          </>
+        )}
+      </S.CoinList>
     </div>
   );
 }

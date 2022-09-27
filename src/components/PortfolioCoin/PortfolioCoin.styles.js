@@ -107,6 +107,7 @@ export const Line = styled.div`
 
   button {
     margin-right: 0;
+    padding-bottom: 0.2em;
   }
 
   span {

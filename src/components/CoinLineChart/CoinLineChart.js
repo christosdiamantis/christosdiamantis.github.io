@@ -1,7 +1,7 @@
 import React, { createRef, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import getDate from "utils/getDate";
-import getChartOptions from "utils/getChartOptions";
+import { chartOptions } from "utils/getChartOptions";
 //eslint-disable-next-line
 import { Chart as ChartJS } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
@@ -54,7 +54,7 @@ export default function CoinLineChart(props) {
     };
   };
 
-  var options = getChartOptions();
+  var options = chartOptions;
 
   return (
     <div className="chart" style={{ height: 350 }}>

@@ -1,1 +1,1 @@
-export {default} from './PortfolioCoin'
+export { default } from "./PortfolioCoin";

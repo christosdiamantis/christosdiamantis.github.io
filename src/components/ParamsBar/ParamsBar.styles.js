@@ -69,7 +69,9 @@ export const Bold = styled.div`
 export const Show = styled.div`
   background: ${({ theme }) => theme.background};
   border-radius: 10px;
-  padding: 0.2em 0.5em;
+  padding: 0.3em 0.6em 0.3em 0.9em;
+  display: flex;
+  align-items: center;
 
   > * {
     color: ${({ theme }) => theme.color};

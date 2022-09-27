@@ -1,0 +1,147 @@
+Date : 2022-09-24 16:12:28
+Directory : c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src
+Total : 93 files,  3540 codes, 11 comments, 431 blanks, all 3982 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         93 |      3,540 |         11 |        431 |      3,982 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                    | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                       |         93 |      3,540 |         11 |        431 |      3,982 |
+| app                                                                                                                     |          1 |         33 |          0 |          4 |         37 |
+| components                                                                                                              |         64 |      2,654 |          9 |        321 |      2,984 |
+| components\BarChart                                                                                                     |          2 |         39 |          1 |          4 |         44 |
+| components\Charts                                                                                                       |          3 |         66 |          0 |         10 |         76 |
+| components\Coin                                                                                                         |          3 |        126 |          0 |         14 |        140 |
+| components\CoinBar                                                                                                      |          3 |        124 |          0 |         14 |        138 |
+| components\CoinChart                                                                                                    |          3 |        108 |          0 |         10 |        118 |
+| components\CoinLineChart                                                                                                |          3 |         69 |          2 |          9 |         80 |
+| components\CoinList                                                                                                     |          3 |        200 |          0 |         20 |        220 |
+| components\CurrencyConverter                                                                                            |          3 |        156 |          2 |         24 |        182 |
+| components\Details                                                                                                      |          3 |        407 |          1 |         40 |        448 |
+| components\Footer                                                                                                       |          3 |         97 |          0 |          9 |        106 |
+| components\GlobalCharts                                                                                                 |          2 |          9 |          0 |          3 |         12 |
+| components\GlobalStats                                                                                                  |          3 |        111 |          0 |         14 |        125 |
+| components\LineChart                                                                                                    |          3 |         83 |          2 |         11 |         96 |
+| components\Link                                                                                                         |          3 |        115 |          0 |         12 |        127 |
+| components\Loader                                                                                                       |          2 |         12 |          0 |          2 |         14 |
+| components\MiniLineChart                                                                                                |          3 |         62 |          1 |          9 |         72 |
+| components\Navbar                                                                                                       |          3 |        222 |          0 |         32 |        254 |
+| components\PagesBar                                                                                                     |          3 |         63 |          0 |          8 |         71 |
+| components\ParamsBar                                                                                                    |          3 |        105 |          0 |         21 |        126 |
+| components\PercentageBar                                                                                                |          3 |         76 |          0 |         13 |         89 |
+| components\PortfolioCoin                                                                                                |          3 |        248 |          0 |         26 |        274 |
+| components\SearchBar                                                                                                    |          3 |        134 |          0 |         15 |        149 |
+| pages                                                                                                                   |          9 |        367 |          1 |         51 |        419 |
+| pages\CoinDetails                                                                                                       |          2 |         13 |          0 |          4 |         17 |
+| pages\Coins                                                                                                             |          3 |         20 |          0 |          6 |         26 |
+| pages\Portfolio                                                                                                         |          3 |        331 |          1 |         40 |        372 |
+| services                                                                                                                |          6 |        160 |          1 |         21 |        182 |
+| utils                                                                                                                   |          7 |        119 |          0 |          8 |        127 |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\App.js                                                   | JavaScript |         29 |          0 |          3 |         32 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\App.styles.js                                            | JavaScript |         41 |          0 |          9 |         50 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\app\store.js                                             | JavaScript |         33 |          0 |          4 |         37 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\BarChart\BarChart.js                          | JavaScript |         38 |          1 |          3 |         42 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\BarChart\index.js                             | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Charts\Charts.js                              | JavaScript |         38 |          0 |          3 |         41 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Charts\Charts.styles.js                       | JavaScript |         27 |          0 |          6 |         33 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Charts\index.js                               | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinBar\CoinBar.js                            | JavaScript |         72 |          0 |          3 |         75 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinBar\CoinBar.styles.js                     | JavaScript |         51 |          0 |         10 |         61 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinBar\index.js                              | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinChart\CoinChart.js                        | JavaScript |         72 |          0 |          3 |         75 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinChart\CoinChart.styles.js                 | JavaScript |         35 |          0 |          6 |         41 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinChart\index.js                            | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinLineChart\CoinLineChart.js                | JavaScript |         68 |          2 |          7 |         77 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinLineChart\CoinLineChart.styles.js         | JavaScript |          0 |          0 |          1 |          1 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinLineChart\index.js                        | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinList\CoinList.js                          | JavaScript |        151 |          0 |         10 |        161 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinList\CoinList.styles.js                   | JavaScript |         48 |          0 |          9 |         57 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CoinList\index.js                             | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Coin\Coin.js                                  | JavaScript |         61 |          0 |          3 |         64 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Coin\Coin.styles.js                           | JavaScript |         64 |          0 |         10 |         74 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Coin\index.js                                 | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CurrencyConverter\CurrencyConverter.js        | JavaScript |         77 |          0 |          8 |         85 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CurrencyConverter\CurrencyConverter.styles.js | JavaScript |         78 |          2 |         15 |         95 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\CurrencyConverter\index.js                    | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Details\Details.js                            | JavaScript |        214 |          0 |          5 |        219 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Details\Details.styles.js                     | JavaScript |        192 |          1 |         34 |        227 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Details\index.js                              | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Footer\Footer.js                              | JavaScript |         71 |          0 |          2 |         73 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Footer\Footer.styles.js                       | JavaScript |         25 |          0 |          6 |         31 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Footer\index.js                               | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\GlobalCharts\GlobalCharts.js                  | JavaScript |          8 |          0 |          2 |         10 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\GlobalCharts\index.js                         | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\GlobalStats\GlobalStats.js                    | JavaScript |         71 |          0 |          3 |         74 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\GlobalStats\GlobalStats.styles.js             | JavaScript |         39 |          0 |         10 |         49 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\GlobalStats\index.js                          | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\LineChart\LineChart.js                        | JavaScript |         68 |          2 |          6 |         76 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\LineChart\LineChart.styles.js                 | JavaScript |         14 |          0 |          4 |         18 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\LineChart\index.js                            | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Link\Link.js                                  | JavaScript |         80 |          0 |          5 |         85 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Link\Link.styles.js                           | JavaScript |         34 |          0 |          6 |         40 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Link\index.js                                 | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Loader\Loader.js                              | JavaScript |         11 |          0 |          2 |         13 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Loader\index.js                               | JavaScript |          1 |          0 |          0 |          1 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\MiniLineChart\MiniLineChart.js                | JavaScript |         55 |          1 |          6 |         62 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\MiniLineChart\MiniLineChart.styles.js         | JavaScript |          6 |          0 |          2 |          8 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\MiniLineChart\index.js                        | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Navbar\Navbar.js                              | JavaScript |         90 |          0 |          3 |         93 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Navbar\Navbar.styles.js                       | JavaScript |        131 |          0 |         28 |        159 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\Navbar\index.js                               | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PagesBar\PagesBar.js                          | JavaScript |         41 |          0 |          2 |         43 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PagesBar\PagesBar.styles.js                   | JavaScript |         21 |          0 |          5 |         26 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PagesBar\index.js                             | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\ParamsBar\ParamsBar.js                        | JavaScript |         25 |          0 |          2 |         27 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\ParamsBar\ParamsBar.styles.js                 | JavaScript |         79 |          0 |         18 |         97 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\ParamsBar\index.js                            | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PercentageBar\PercentageBar.js                | JavaScript |         32 |          0 |          3 |         35 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PercentageBar\PercentageBar.styles.js         | JavaScript |         43 |          0 |          9 |         52 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PercentageBar\index.js                        | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PortfolioCoin\PortfolioCoin.js                | JavaScript |        135 |          0 |          3 |        138 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PortfolioCoin\PortfolioCoin.styles.js         | JavaScript |        112 |          0 |         22 |        134 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\PortfolioCoin\index.js                        | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\SearchBar\SearchBar.js                        | JavaScript |         72 |          0 |          4 |         76 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\SearchBar\SearchBar.styles.js                 | JavaScript |         61 |          0 |         10 |         71 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\SearchBar\index.js                            | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\components\index.js                                      | JavaScript |         22 |          0 |          1 |         23 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\globalStyles.js                                          | JavaScript |         20 |          0 |          4 |         24 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\index.js                                                 | JavaScript |         21 |          0 |          3 |         24 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\CoinDetails\CoinDetails.js                         | JavaScript |         12 |          0 |          3 |         15 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\CoinDetails\index.js                               | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\Coins\Coins.js                                     | JavaScript |         12 |          0 |          2 |         14 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\Coins\Coins.styles.js                              | JavaScript |          7 |          0 |          3 |         10 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\Coins\index.js                                     | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\Portfolio\Portfolio.js                             | JavaScript |        186 |          1 |         10 |        197 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\Portfolio\Portfolio.styles.js                      | JavaScript |        144 |          0 |         29 |        173 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\Portfolio\index.js                                 | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\pages\index.js                                           | JavaScript |          3 |          0 |          1 |          4 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\reportWebVitals.js                                       | JavaScript |         12 |          0 |          2 |         14 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\services\cryptoAPI.js                                    | JavaScript |         40 |          0 |          4 |         44 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\services\currency.js                                     | JavaScript |         12 |          0 |          4 |         16 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\services\index.js                                        | JavaScript |         13 |          0 |          2 |         15 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\services\portfolio.js                                    | JavaScript |         62 |          1 |          4 |         67 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\services\searchAPI.js                                    | JavaScript |         13 |          0 |          3 |         16 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\services\theme.js                                        | JavaScript |         20 |          0 |          4 |         24 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\theme.js                                                 | JavaScript |         84 |          0 |          5 |         89 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\utils\getChartOptions.js                                 | JavaScript |         76 |          0 |          1 |         77 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\utils\getDate.js                                         | JavaScript |          7 |          0 |          1 |          8 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\utils\getDateAndTime.js                                  | JavaScript |         10 |          0 |          1 |         11 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\utils\getDay.js                                          | JavaScript |          3 |          0 |          0 |          3 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\utils\getSymbol.js                                       | JavaScript |         10 |          0 |          2 |         12 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\utils\matchIDtoAPIName.js                                | JavaScript |         10 |          0 |          2 |         12 |
+| c:\Users\chris\OneDrive\Desktop\developerPro\developer-pro\src\utils\percentage.js                                      | JavaScript |          3 |          0 |          1 |          4 |
+| Total                                                                                                                   |            |      3,540 |         11 |        431 |      3,982 |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

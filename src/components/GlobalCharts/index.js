@@ -1,1 +1,1 @@
-export {default} from './GlobalCharts';
+export { default } from "./GlobalCharts";
