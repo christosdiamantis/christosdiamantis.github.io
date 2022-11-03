@@ -19,7 +19,7 @@ export default function GlobalStats() {
       )}
       {isError && (
         <div>
-          Error {error.status}: {error.data.error}
+          Error {error?.status}: {error?.data?.error || "API server"}
         </div>
       )}
       {!isFetching && !!data && (
