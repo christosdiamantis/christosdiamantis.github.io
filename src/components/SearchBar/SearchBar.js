@@ -34,12 +34,12 @@ export default function SearchBar({ type, pullData }) {
           <Loader />
         </S.Loading>
       )}
-      {search.length !== 0 && data?.length === 0 && (
+      {search.length !== 0 && data?.coins.length === 0 && (
         <S.NoMatches>No matches</S.NoMatches>
       )}
-      {data && !isError && !isFetching && focused && !!search && (
+      {data && !!searchData.coins.length && !isError && !isFetching && focused && !!search && (
         <S.SearchResults>
-          {type === "form" && searchData?.coins?.map((coin) => {
+          {type === "form" && searchData?.coins?.slice(0, 5)?.map((coin) => {
             return (
               <S.SearchDiv
                 onClick={() => handleClick(coin)}
