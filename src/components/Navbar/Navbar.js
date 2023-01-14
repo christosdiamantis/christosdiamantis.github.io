@@ -60,18 +60,18 @@ export default function Navbar() {
           <S.RightSide>
             <SearchBar type="navbar" />
             <div>
-            <select
-              value={currency.toUpperCase()}
-              onChange={(e) =>
-                dispatch(setCurrency(e.target.value.toLowerCase()))
-              }
-            >
-              <option value="EUR">EUR</option>
-              <option value="USD">USD</option>
-              <option value="GBP">GBP</option>
-              <option value="BTC">BTC</option>
-              <option value="ETH">ETH</option>
-            </select>
+              <select
+                value={currency.toUpperCase()}
+                onChange={(e) =>
+                  dispatch(setCurrency(e.target.value.toLowerCase()))
+                }
+              >
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+              </select>
             </div>
             <button onClick={() => dispatch(setTheme())}>
               <S.Icon>

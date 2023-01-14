@@ -37,33 +37,33 @@ export default function SearchBar({ type, pullData }) {
       {search.length !== 0 && data?.length === 0 && (
         <S.NoMatches>No matches</S.NoMatches>
       )}
-      {data && !!data.length && !isError && !isFetching && focused && !!search && (
+      {data && !isError && !isFetching && focused && !!search && (
         <S.SearchResults>
-          {type === "form" && searchData.map((coin) => {
+          {type === "form" && searchData?.coins?.map((coin) => {
             return (
               <S.SearchDiv
                 onClick={() => handleClick(coin)}
-                key={coin.id}
+                key={coin?.id}
                 onMouseDown={(e) => e.preventDefault()}
               >
-                <img src={coin.thumb} alt={coin.id} />
+                <img src={coin?.thumb} alt={coin?.id} />
                 <div>
-                  {coin.name}({coin.symbol})
+                  {coin?.name}({coin?.symbol})
                 </div>
               </S.SearchDiv>
             );
           })}
-          {type === "navbar" && searchData.map((coin) => {
+          {type === "navbar" && searchData?.coins?.slice(0, 10)?.map((coin) => {
             return (
               <Link
-                to={`/${coin.id}`}
+                to={`/${coin?.id}`}
                 onClick={() => setSearch("")}
                 key={coin.id}
                 onMouseDown={(e) => e.preventDefault()}
               >
-                <img src={coin.thumb} alt={coin.id} />
+                <img src={coin?.thumb} alt={coin?.id} />
                 <div>
-                  {coin.name}({coin.symbol})
+                  {coin?.name}({coin.symbol})
                 </div>
               </Link>
             );
