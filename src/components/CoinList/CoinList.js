@@ -97,7 +97,7 @@ export default function CoinList() {
         )}
         {isError && (
           <div>
-            Error {error.status}: {error.data.error}
+            Error {error?.status}: {error?.data?.error}
           </div>
         )}
         {!isFetching && !!coins && (
