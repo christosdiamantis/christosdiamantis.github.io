@@ -22,7 +22,7 @@ export default function CoinChart({ coin }) {
       )}
       {isError && (
         <div>
-          Error {error.status}: {error.data.error}
+          Error {error?.status}: {error?.data?.error}
         </div>
       )}
       {!isFetching && !!data && (
@@ -65,7 +65,7 @@ export default function CoinChart({ coin }) {
             </S.Radio>
           </S.CustomRadio>
           <S.Chart>
-            <CoinLineChart data={data.prices} currency={currency} />
+            <CoinLineChart data={data?.prices} currency={currency} />
           </S.Chart>
         </>
       )}
