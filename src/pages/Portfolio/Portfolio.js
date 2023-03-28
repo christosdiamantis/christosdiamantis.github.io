@@ -122,7 +122,7 @@ export default function Portfolio() {
       <S.Button onClick={handleClick}>Add Asset</S.Button>
       {(isError || priceError) && (
         <div>
-          Error {error.status}: {error.data.error || priceIsError.data.error}
+          Error {error?.status}: {error?.data?.error || priceIsError?.data?.error}
         </div>
       )}
       {priceData &&
