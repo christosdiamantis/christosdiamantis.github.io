@@ -41,6 +41,12 @@ export default function CoinList() {
   }
 
   function handleSortingState({ target: { id } }) {
+    if (window.gtag)  {
+      window.gtag("event", "sort", {
+        event_category: "sort",
+        event_label: id,
+      });
+    }
     const [value, order] = sortingState?.split("_") || ["", ""];
     id === value
       ? setSortingState(id.concat(order === "desc" ? "_asc" : "_desc"))
