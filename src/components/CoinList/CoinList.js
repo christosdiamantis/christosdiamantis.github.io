@@ -45,6 +45,7 @@ export default function CoinList() {
       window.gtag("event", "sort", {
         event_category: "sort",
         event_label: id,
+        event_value: id
       });
     }
     const [value, order] = sortingState?.split("_") || ["", ""];
