@@ -56,13 +56,6 @@ export default function CoinChart({ coin }) {
               ></S.Button>
               <span>1y</span>
             </S.Radio>
-            <S.Radio>
-              <S.Button
-                onClick={() => setDays("max")}
-                checked={days === "max"}
-              ></S.Button>
-              <span>max</span>
-            </S.Radio>
           </S.CustomRadio>
           <S.Chart>
             <CoinLineChart data={data?.prices} currency={currency} />
