@@ -4,6 +4,7 @@ import * as S from "./Footer.styles";
 
 export default function Footer() {
   const theme = useTheme();
+  const currentYear = new Date().getFullYear();
   return (
     <div>
       <S.Footer>
@@ -64,7 +65,7 @@ export default function Footer() {
           >
             CoinGecko Api
           </a>{" "}
-          -2022
+          -{currentYear}
         </p>
       </S.Footer>
     </div>
