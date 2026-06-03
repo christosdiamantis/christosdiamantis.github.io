@@ -93,6 +93,7 @@ export default function Portfolio() {
       moment().isBefore(date) ||
       coinData === undefined
     ) {
+      // eslint-disable-next-line
       if (amount == 0 || amount === undefined) {
         setInvalidAmount(true);
       } else {
