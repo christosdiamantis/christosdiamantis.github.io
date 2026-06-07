@@ -1,7 +1,5 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { applyMiddleware } from '@reduxjs/toolkit';
+import {  configureStore } from '@reduxjs/toolkit';
 import {
-  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
