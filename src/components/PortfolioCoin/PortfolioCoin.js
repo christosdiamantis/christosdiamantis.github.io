@@ -18,6 +18,9 @@ export default function PortfolioCoin({
   const dispatch = useDispatch();
   const currency = useSelector((state) => state.currency.currency);
   const theme = useTheme();
+  const hasPrice = Number.isFinite(currentPrice);
+  const hasAllPrices = hasPrice && coin.transactions.every((transaction) =>
+    Number.isFinite(transaction.price?.[currency]));
   var profit = 0;
 
   return (
@@ -35,17 +38,17 @@ export default function PortfolioCoin({
           <div>
             <S.Bold>Current price:</S.Bold>
             {getSymbol(currency)}
-            {currentPrice}
+            {hasPrice ? currentPrice : "N/A"}
           </div>
           <div>
             <S.Bold>Price change 24h:</S.Bold>
             <S.Sign sign={priceChange > 0 ? "portfolioPositive" : "portfolioNegative"}>
-              {priceChange ? `${priceChange.toFixed(2)}%` : "N/A"}
+              {Number.isFinite(priceChange) ? `${priceChange.toFixed(2)}%` : "N/A"}
             </S.Sign>
           </div>
           <div>
             <S.Bold>Volume/Market cap:</S.Bold>
-            {((volume / marketCap) * 100).toFixed(2)}%
+            {Number.isFinite(volume) && marketCap > 0 ? `${((volume / marketCap) * 100).toFixed(2)}%` : "N/A"}
           </div>
           <div>
             <S.Bold>Last updated:</S.Bold>
@@ -66,7 +69,7 @@ export default function PortfolioCoin({
               <div>
                 <S.Bold>Amount Value:</S.Bold>
                 {getSymbol(currency)}
-                {(transaction.amount * transaction.price[currency]).toFixed(2)}
+                {Number.isFinite(transaction.price?.[currency]) ? (transaction.amount * transaction.price[currency]).toFixed(2) : "N/A"}
               </div>
               <div>
                 <S.Bold>
@@ -82,12 +85,12 @@ export default function PortfolioCoin({
                   }
                 >
                   {getSymbol(currency)}
-                  {Math.abs(
+                  {hasPrice && Number.isFinite(transaction.price?.[currency]) ? Math.abs(
                     (
                       (currentPrice - transaction.price[currency]) *
                       transaction.amount
                     ).toFixed(4)
-                  )}
+                  ) : "N/A"}
                 </S.Sign>
               </div>
               <div>
@@ -127,7 +130,7 @@ export default function PortfolioCoin({
             <S.Bold>Total {profit < 0 ? "loses" : "profit"}: </S.Bold>
             <S.Sign sign={profit < 0 ? "portfolioNegative" : "portfolioPositive"}>
               {getSymbol(currency)}
-              {Math.abs(profit.toFixed(4))}
+              {hasAllPrices ? Math.abs(profit.toFixed(4)) : "N/A"}
             </S.Sign>
           </span>
         )}

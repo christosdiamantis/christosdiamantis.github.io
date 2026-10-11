@@ -1,3 +1,4 @@
+import ApiError from "components/ApiError/ApiError";
 import React from "react";
 import { useGetCoinQuery } from "services/cryptoAPI";
 import { useSelector } from "react-redux";
@@ -11,46 +12,47 @@ import * as S from "./Details.styles";
 
 export default function Details({ coin }) {
   const currency = useSelector((state) => state.currency.currency);
-  const { data, isFetching, isError, error } = useGetCoinQuery(coin);
+  const { currentData: data, isFetching, isError, error, refetch } = useGetCoinQuery(coin);
   const theme = useTheme();
 
   const market = data?.market_data;
+  if (data && !Number.isFinite(market?.current_price?.[currency])) {
+    return <ApiError context="Coin details" error={{ status: "CUSTOM_ERROR", error: "Market data is unavailable for this coin and currency." }} onRetry={refetch} />;
+  }
   const arrowUp = "▲";
   const arrowDown = "▼";
   var priceSign =
-    market?.price_change_percentage_24h_in_currency[currency] < 0
+    market?.price_change_percentage_24h_in_currency?.[currency] < 0
       ? "negative"
       : "positive";
 
   return (
     <>
-      {isFetching && (
+      {isFetching && !data && (
         <div>
           <Loader />
         </div>
       )}
       {isError && (
-        <div>
-          Error {error?.status}: {error?.data?.error}
-        </div>
+        <ApiError context="Coin details" error={error} onRetry={refetch} />
       )}
-      {!isFetching && !!data && (
+      {!!data && (
         <>
           <S.CoinDetails>
             <h2>Summary</h2>
             <S.Details>
               <div>
-                <img src={data.image.large} alt="Coin" />
+                <img src={data.image?.large} alt="Coin" />
                 <S.Name>
                   {data.name}({data.symbol.toUpperCase()})
                 </S.Name>
-                <Link url={data.links.homepage[0]} />
+                <Link url={data.links?.homepage?.[0]} />
               </div>
               <div>
                 <S.Price>
                   <div>
                     {getSymbol(currency)}
-                    {Number(market?.current_price[currency]).toLocaleString(
+                    {Number(market?.current_price?.[currency]).toLocaleString(
                       "en-GB"
                     )}
                   </div>
@@ -60,7 +62,7 @@ export default function Details({ coin }) {
                     </S.Arrow>
                     <div>
                       {Math.abs(
-                        market?.price_change_percentage_24h_in_currency[
+                        market?.price_change_percentage_24h_in_currency?.[
                           currency
                         ]
                       ).toFixed(1)}
@@ -71,7 +73,7 @@ export default function Details({ coin }) {
                 <S.DailyChange>
                   <S.Bold>
                     Daily{" "}
-                    {market?.price_change_24h_in_currency[currency] < 0
+                    {market?.price_change_24h_in_currency?.[currency] < 0
                       ? "Loss"
                       : "Profit"}
                     :
@@ -79,7 +81,7 @@ export default function Details({ coin }) {
                   <S.Change sign={priceSign}>
                     {getSymbol(currency)}
                     {Math.abs(
-                      market?.price_change_24h_in_currency[currency]
+                      market?.price_change_24h_in_currency?.[currency]
                     ).toFixed(2)}
                   </S.Change>
                 </S.DailyChange>
@@ -102,10 +104,10 @@ export default function Details({ coin }) {
                   <S.Arrow sign="positive">{arrowUp}</S.Arrow>
                   <div>
                     <S.Bold>All Time High:</S.Bold> {getSymbol(currency)}
-                    {Number(market?.ath[currency]).toLocaleString("en-GB")}
+                    {Number(market?.ath?.[currency]).toLocaleString("en-GB")}
                     <br></br>
                     {getDateAndTime(
-                      Date.parse(`${market?.ath_date[currency]}`)
+                      Date.parse(`${market?.ath_date?.[currency]}`)
                     )}
                   </div>
                 </S.AllTime>
@@ -114,11 +116,11 @@ export default function Details({ coin }) {
                   <div>
                     <div>
                       <S.Bold>All Time Low:</S.Bold> {getSymbol(currency)}
-                      {Number(market?.atl[currency]).toLocaleString("en-GB")}
+                      {Number(market?.atl?.[currency]).toLocaleString("en-GB")}
                     </div>
                     <div>
                       {getDateAndTime(
-                        Date.parse(`${market?.atl_date[currency]}`)
+                        Date.parse(`${market?.atl_date?.[currency]}`)
                       )}
                     </div>
                   </div>
@@ -129,15 +131,15 @@ export default function Details({ coin }) {
                   <S.Circle> </S.Circle>
                   <S.Bold>Market Cap:</S.Bold>
                   {getSymbol(currency)}
-                  {millify(Number(market?.market_cap[currency]))}
+                  {millify(Number(market?.market_cap?.[currency]))}
                 </S.LineElement>
                 <br></br>
                 <S.LineElement>
                   <S.Circle> </S.Circle>
                   <S.Bold>Fully Diluted Valuation:</S.Bold>
-                  {market?.fully_diluted_valuation[currency]
+                  {market?.fully_diluted_valuation?.[currency]
                     ? `${getSymbol(currency)}
-                  ${millify(Number(market?.fully_diluted_valuation[currency]))}`
+                  ${millify(Number(market?.fully_diluted_valuation?.[currency]))}`
                     : "N/A"}
                 </S.LineElement>
                 <br></br>
@@ -145,7 +147,7 @@ export default function Details({ coin }) {
                   <S.Circle> </S.Circle>
                   <S.Bold>Total Volume:</S.Bold>
                   {getSymbol(currency)}
-                  {millify(Number(market?.total_volume[currency]))}
+                  {millify(Number(market?.total_volume?.[currency]))}
                 </S.LineElement>
                 <br></br>
                 <S.LineElement>
@@ -170,8 +172,8 @@ export default function Details({ coin }) {
                   <S.StyledBar></S.StyledBar>
                   <PercentageBar
                     type="details"
-                    first={market?.total_volume[currency]}
-                    second={market?.market_cap[currency]}
+                    first={market?.total_volume?.[currency]}
+                    second={market?.market_cap?.[currency]}
                   />
                 </S.LineElement>
               </div>
@@ -194,22 +196,22 @@ export default function Details({ coin }) {
                   />
                 </svg>
                 <div>
-                  {!!data.description.en
+                  {!!data.description?.en
                     ? parse(data.description.en)
                     : "No description provided"}
                 </div>
               </div>
             </S.Description>
             <S.Links>
-              <Link url={data?.links?.blockchain_site[0]} />
-              <Link url={data?.links?.blockchain_site[1]} />
-              <Link url={data?.links?.blockchain_site[2]} />
+              <Link url={data?.links?.blockchain_site?.[0]} />
+              <Link url={data?.links?.blockchain_site?.[1]} />
+              <Link url={data?.links?.blockchain_site?.[2]} />
             </S.Links>
           </S.CoinDetails>
           <CurrencyConverter
             currency={currency}
             coin={data.symbol}
-            price={market?.current_price[currency]}
+            price={market?.current_price?.[currency]}
           />
         </>
       )}

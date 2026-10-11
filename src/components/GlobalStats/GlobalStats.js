@@ -1,3 +1,4 @@
+import ApiError from "components/ApiError/ApiError";
 import React from "react";
 import { useGetGlobalStatsQuery } from "services/cryptoAPI";
 import { useSelector } from "react-redux";
@@ -8,21 +9,22 @@ import * as S from "./GlobalStats.styles";
 
 export default function GlobalStats() {
   const currency = useSelector((state) => state.currency.currency);
-  const { data, isFetching, isError, error } = useGetGlobalStatsQuery();
+  const { currentData: data, isFetching, isError, error, refetch } = useGetGlobalStatsQuery();
 
+  if (data && !Number.isFinite(data.data?.total_market_cap?.[currency])) {
+    return <ApiError context="Global market stats" error={{ status: "CUSTOM_ERROR", error: "Global market data is currently unavailable." }} onRetry={refetch} />;
+  }
   return (
     <div>
-      {isFetching && (
+      {isFetching && !data && (
         <div>
           <Loader />
         </div>
       )}
       {isError && (
-        <div>
-          Error {error?.status}: {error?.data?.error || "API server"}
-        </div>
+        <ApiError context="Global market stats" error={error} onRetry={refetch} />
       )}
-      {!isFetching && !!data && (
+      {!!data && (
         <S.GlobalStats>
           <thead>
             <tr>
@@ -40,7 +42,7 @@ export default function GlobalStats() {
                     }
                     alt="logo"
                   />
-                  {data?.data?.market_cap_percentage?.btc.toFixed(0)}%
+                  {data?.data?.market_cap_percentage?.btc?.toFixed(0)}%
                   <PercentageBar
                     type="global"
                     first={data?.data?.market_cap_percentage?.btc}
@@ -56,7 +58,7 @@ export default function GlobalStats() {
                     }
                     alt="logo"
                   />
-                  {data?.data?.market_cap_percentage?.eth.toFixed(0)}%
+                  {data?.data?.market_cap_percentage?.eth?.toFixed(0)}%
                   <PercentageBar
                     type="global"
                     first={data?.data?.market_cap_percentage?.eth}

@@ -3,8 +3,7 @@ import { useTheme } from "styled-components";
 import getDay from "utils/getDay";
 import getDate from "utils/getDate";
 import { chartOptions } from "utils/getChartOptions";
-//eslint-disable-next-line
-import { Chart as ChartJS } from "chart.js/auto";
+import "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import getSymbol from "utils/getSymbol";
 import * as S from "./LineChart.styles";

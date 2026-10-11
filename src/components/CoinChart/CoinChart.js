@@ -1,3 +1,4 @@
+import ApiError from "components/ApiError/ApiError";
 import React, { useState } from "react";
 import * as S from "./CoinChart.styles";
 import { useSelector } from "react-redux";
@@ -7,25 +8,24 @@ import { Loader, CoinLineChart } from "components";
 export default function CoinChart({ coin }) {
   const [days, setDays] = useState("30");
   const currency = useSelector((state) => state.currency.currency);
-  const { data, isFetching, isError, error } = useGetMarketsQuery({
+  const { currentData: data, isFetching, isError, error, refetch } = useGetMarketsQuery({
     coin: coin,
     currency: currency,
-    days: days,
+    days: Number(days),
   });
 
   return (
     <>
-      {isFetching && (
+      {isFetching && !data && (
         <div>
           <Loader />
         </div>
       )}
       {isError && (
-        <div>
-          Error {error?.status}: {error?.data?.error}
-        </div>
+        <ApiError context="Coin chart" error={error} onRetry={refetch} />
       )}
-      {!isFetching && !!data && (
+      {data && !data.prices?.length && <div>No chart data is available for this period.</div>}
+      {!!data?.prices?.length && (
         <>
           <S.CustomRadio>
             <S.Radio>

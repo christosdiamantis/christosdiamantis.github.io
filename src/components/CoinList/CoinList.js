@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import ApiError from "components/ApiError/ApiError";
+import React, { useState } from "react";
 import { ParamsBar, CoinBar, Coin, Loader, PagesBar } from "components";
 import { useSelector } from "react-redux";
 import { useGetCoinsQuery } from "services/cryptoAPI";
@@ -7,24 +8,24 @@ import * as S from "./CoinList.styles";
 
 export default function CoinList() {
   const currency = useSelector((state) => state.currency.currency);
-  const [perPage, setPerPage] = useState(20);
+  const [perPage, setPerPage] = useState(() => {
+    try {
+      const saved = Number(localStorage.getItem("perPage"));
+      return [10, 20, 50, 100].includes(saved) ? saved : 20;
+    } catch { return 20; }
+  });
   const [pageNumber, setPageNumber] = useState(1);
   const [sortingState, setSortingState] = useState();
-  const { data, isFetching, isError, error } = useGetCoinsQuery({
+  const { currentData: data, isFetching, isError, error, refetch } = useGetCoinsQuery({
     currency: currency,
     perPage: perPage,
     page: pageNumber,
   });
 
-  useEffect(() => {
-    if (localStorage.getItem("perPage")) {
-      setPerPage(localStorage.getItem("perPage"));
-    }
-  }, []);
 
   function handlePerPage(e) {
-    localStorage.setItem("perPage", e.target.value);
-    setPerPage(e.target.value);
+    try { localStorage.setItem("perPage", e.target.value); } catch { /* Storage unavailable. */ }
+    setPerPage(Number(e.target.value));
     setPageNumber(1);
   }
 
@@ -94,7 +95,7 @@ export default function CoinList() {
     <div>
       <h2 style={{ marginTop:"0.3em", marginBottom: "1em" }}>Overview</h2>
       <S.CoinList perPage={perPage}>
-        {isFetching && (
+        {isFetching && !data && (
           <div>
             <S.Placeholder>
               <Loader />
@@ -102,11 +103,9 @@ export default function CoinList() {
           </div>
         )}
         {isError && (
-          <div>
-            Error {error?.status}: {error?.data?.error}
-          </div>
+          <ApiError error={error} onRetry={refetch} />
         )}
-        {!isFetching && !!coins && (
+        {!!data && (
           <>
             <ParamsBar
               handlePerPage={handlePerPage}
@@ -122,10 +121,10 @@ export default function CoinList() {
                 sortingState={sortingState}
               />
               <tbody>
-                {coins.map((coin, index) => {
+                {coins.map((coin) => {
                   return (
                     <Coin
-                      key={index}
+                      key={coin.id}
                       id={coin.id}
                       rank={coin.market_cap_rank}
                       image={coin.image}

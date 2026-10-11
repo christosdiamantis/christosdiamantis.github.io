@@ -1,13 +1,13 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi } from "@reduxjs/toolkit/query/react";
+import baseQuery from "./coingeckoBaseQuery";
 
 export const searchAPI = createApi({
-  method: "GET",
   reducerPath: "searchApi",
-  baseQuery: fetchBaseQuery(""),
+  baseQuery,
+  keepUnusedDataFor: 300,
   endpoints: (builder) => ({
     getSearch: builder.query({
-      query: (search) =>
-        !!search && `https://api.coingecko.com/api/v3/search?query=${search}`,//https://crypto-app-server.herokuapp.com/coins/search-query-from-input Dead API?
+      query: (search) => ({ url: "/search", params: { query: search } }),
     }),
   }),
 });

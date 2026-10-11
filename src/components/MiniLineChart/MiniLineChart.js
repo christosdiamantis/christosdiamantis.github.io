@@ -1,12 +1,12 @@
 import React from "react";
 import { useTheme } from "styled-components";
-//eslint-disable-next-line
-import { Chart as ChartJS } from "chart.js/auto";
+import "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import * as S from "./MiniLineChart.styles";
 
-export default function MiniLineChart({ sparkline: { price } }) {
+export default function MiniLineChart({ sparkline }) {
   const theme = useTheme();
+  const price = sparkline?.price || [];
 
   const getColor = () => {
     return price[0] > price[price.length - 1] ? theme.negative : theme.positive;
